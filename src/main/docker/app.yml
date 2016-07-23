@@ -1,0 +1,30 @@
+version: '2'
+services:
+    portal-app:
+        image: portal
+        external_links:
+            - portal-mongodb:mongodb
+            # Uncomment to have Cassandra working with the gateway
+            # - portal-cassandra:cassandra
+            - jhipster-registry:registry
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod
+            - SPRING_CLOUD_CONFIG_URI=http://admin:admin@registry:8761/config
+            - SPRING_DATA_MONGODB_URI=mongodb://mongodb:27017
+            - SPRING_DATA_MONGODB_DATABASE=portal
+            - SPRING_DATA_CASSANDRA_CONTACTPOINTS=cassandra
+            - JHIPSTER_SLEEP=30 # gives time for the cassandra cluster to start and execute the migration scripts
+        ports:
+            - 9090:9090
+    portal-mongodb:
+        extends:
+            file: mongodb.yml
+            service: portal-mongodb
+        # Uncomment to have Cassandra working with the gateway
+        # extends:
+        #     file: cassandra-cluster.yml
+        #     service: portal-cassandra
+    jhipster-registry:
+        extends:
+            file: jhipster-registry.yml
+            service: jhipster-registry
