@@ -1,0 +1,23 @@
+{
+    "portalApp": {
+        "contaCorrente" : {
+            "home": {
+                "title": "Conta Correntes",
+                "createLabel": "Criar novo Conta Corrente",
+                "createOrEditLabel": "Criar ou editar Conta Corrente",
+                "search": "Pesquisar por Conta Corrente"
+            },
+            "created": "Um novo Conta Corrente é criado com o identificador {{ param }}",
+            "updated": "Um Conta Corrente é atualizado com o identificador {{ param }}",
+            "deleted": "Um Conta Corrente é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Conta Corrente {{ id }}?"
+            },
+            "detail": {
+                "title": "Conta Corrente"
+            },
+            "codigo": "Codigo",
+            "saldo": "Saldo"
+        }
+    }
+}

@@ -1,0 +1,35 @@
+
+<div>
+    <h2><span translate="portalApp.movimentacao.detail.title">Movimentacao</span> {{vm.movimentacao.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="portalApp.movimentacao.valor">Valor</span></dt>
+        <dd>
+            <span>{{vm.movimentacao.valor}}</span>
+        </dd>
+        <dt><span translate="portalApp.movimentacao.tipo">Tipo</span></dt>
+        <dd>
+            <span translate="{{'portalApp.TipoMovimentacao.' + vm.movimentacao.tipo}}">{{vm.movimentacao.tipo}}</span>
+        </dd>
+        <dt><span translate="portalApp.movimentacao.data">Data</span></dt>
+        <dd>
+            <span>{{vm.movimentacao.data | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span translate="portalApp.movimentacao.contaCorrente">Conta Corrente</span></dt>
+        <dd>
+            <span>{{vm.movimentacao.contaCorrente}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="movimentacao-detail.edit({id:vm.movimentacao.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

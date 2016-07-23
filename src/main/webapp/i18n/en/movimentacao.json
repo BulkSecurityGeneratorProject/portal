@@ -1,0 +1,25 @@
+{
+    "portalApp": {
+        "movimentacao" : {
+            "home": {
+                "title": "Movimentacaos",
+                "createLabel": "Create a new Movimentacao",
+                "createOrEditLabel": "Create or edit a Movimentacao",
+                "search": "Search for Movimentacao"
+            },
+            "created": "A new Movimentacao is created with identifier {{ param }}",
+            "updated": "A Movimentacao is updated with identifier {{ param }}",
+            "deleted": "A Movimentacao is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Movimentacao {{ id }}?"
+            },
+            "detail": {
+                "title": "Movimentacao"
+            },
+            "valor": "Valor",
+            "tipo": "Tipo",
+            "data": "Data",
+            "contaCorrente": "Conta Corrente"
+        }
+    }
+}

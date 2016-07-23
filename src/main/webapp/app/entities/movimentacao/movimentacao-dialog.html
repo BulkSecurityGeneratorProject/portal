@@ -1,0 +1,61 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myMovimentacaoLabel" translate="portalApp.movimentacao.home.createOrEditLabel">Create or edit a Movimentacao</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.movimentacao.id">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.movimentacao.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="portalApp.movimentacao.valor" for="field_valor">Valor</label>
+            <input type="number" class="form-control" name="valor" id="field_valor"
+                    ng-model="vm.movimentacao.valor"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="portalApp.movimentacao.tipo" for="field_tipo">Tipo</label>
+            <select class="form-control" name="tipo" ng-model="vm.movimentacao.tipo" id="field_tipo">
+                <option value="CREDITO" translate="portalApp.TipoMovimentacao.CREDITO">CREDITO</option>
+                <option value="DEBITO" translate="portalApp.TipoMovimentacao.DEBITO">DEBITO</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="portalApp.movimentacao.data" for="field_data">Data</label>
+                <div class="input-group">
+                    <input id="field_data" type="text" class="form-control" name="data" uib-datepicker-popup="{{dateformat}}" ng-model="vm.movimentacao.data" is-open="vm.datePickerOpenStatus.data"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('data')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="portalApp.movimentacao.contaCorrente" for="field_contaCorrente">Conta Corrente</label>
+            <input type="text" class="form-control" name="contaCorrente" id="field_contaCorrente"
+                    ng-model="vm.movimentacao.contaCorrente"
+                    required />
+            <div ng-show="editForm.contaCorrente.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.contaCorrente.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

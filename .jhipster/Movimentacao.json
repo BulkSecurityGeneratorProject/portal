@@ -1,0 +1,31 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "valor",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "tipo",
+            "fieldType": "TipoMovimentacao",
+            "fieldValues": "CREDITO,DEBITO"
+        },
+        {
+            "fieldName": "data",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "contaCorrente",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "movimentacao",
+    "pagination": "pager",
+    "microserviceName": "financeiro",
+    "searchEngine": "no"
+}

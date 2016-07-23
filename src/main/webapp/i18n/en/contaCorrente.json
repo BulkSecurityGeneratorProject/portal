@@ -1,0 +1,23 @@
+{
+    "portalApp": {
+        "contaCorrente" : {
+            "home": {
+                "title": "Conta Correntes",
+                "createLabel": "Create a new Conta Corrente",
+                "createOrEditLabel": "Create or edit a Conta Corrente",
+                "search": "Search for Conta Corrente"
+            },
+            "created": "A new Conta Corrente is created with identifier {{ param }}",
+            "updated": "A Conta Corrente is updated with identifier {{ param }}",
+            "deleted": "A Conta Corrente is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Conta Corrente {{ id }}?"
+            },
+            "detail": {
+                "title": "Conta Corrente"
+            },
+            "codigo": "Codigo",
+            "saldo": "Saldo"
+        }
+    }
+}
