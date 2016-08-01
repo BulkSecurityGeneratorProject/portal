@@ -12,7 +12,9 @@
 
 eureka:
     instance:
-        prefer-ip-address: true
+        prefer-ip-address: false
+        hostname: evening-crag-25851.herokuapp.com
+        non-secure-port: 80
     client:
         enabled: true
         healthcheck:
